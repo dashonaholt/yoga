@@ -19,9 +19,9 @@ mongoose
   .then(() => {
     console.log("Connected to the DB");
     // Start the Express server
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
+    // app.listen(PORT, () => {
+    //   console.log(`Server is running on port ${PORT}`);
+    // });
   })
   .catch((error) => {
     console.error("Failed to connect to the DB:", error);
@@ -37,6 +37,7 @@ app.use((err, req, res, next) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
+
 //Server Listen
 app.listen(9000, () => {
   console.log("The server is running on Port 9000");
